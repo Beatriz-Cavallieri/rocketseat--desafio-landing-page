@@ -29,11 +29,15 @@ const ProvaSocial: React.FC = () => {
     };
     const citacoes = [cit1, cit2, cit3];
     return (
-        <Conteudo>
-        {citacoes.map((cit) => (
-            <CardProvaSocial texto={cit.texto} nome={cit.nome} sobrenome={cit.sobrenome} />
+      <Conteudo>
+          {citacoes.map(cit => (
+              <CardProvaSocial
+              texto={cit.texto}
+                    nome={cit.nome}
+              sobrenome={cit.sobrenome}
+            />
             ))}
-      </Conteudo>
+        </Conteudo>
     );
 };
 

@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Li = styled.li`
     width: 50px;
@@ -11,4 +12,8 @@ export const Li = styled.li`
     background-color: var(--amarelo);
     border-radius: 50%;
     margin: 0.4em;
-`
+
+    &:hover {
+        background-color: ${shade(0.2, '#bb8103')};
+    }
+`;

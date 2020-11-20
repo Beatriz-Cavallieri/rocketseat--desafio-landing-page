@@ -11,6 +11,19 @@ interface Citacao {
     sobrenome: string;
 }
 
+function getFoto(sobrenome: string) {
+    switch (sobrenome) {
+        case 'Nietzsche':
+            return Nietzsche;
+            break;
+        case 'Megginson':
+            return Megginson;
+            break;
+        default:
+            return McKewon;
+    }
+}
+
 const CardProvaSocial: React.FC<Citacao> = ({
     children,
     texto,
@@ -21,15 +34,18 @@ const CardProvaSocial: React.FC<Citacao> = ({
     const nomeCompleto = `${nome} ${sobrenome}`;
 
     return (
-        <Conteudo>
-            <FaQuoteLeft size={30} />
-        <q>{texto}</q>
-            <br />
-        <Autoria>
-              <cite>{nomeCompleto}</cite>
-              <img src={Nietzsche} alt={`Fotografia de ${nomeCompleto}`} />
-            </Autoria>
-      </Conteudo>
+      <Conteudo>
+          <FaQuoteLeft size={30} />
+          <q>{texto}</q>
+          <br />
+            <Autoria>
+          <cite>{nomeCompleto}</cite>
+          <img
+                    src={getFoto(sobrenome)}
+                  alt={`Fotografia de ${nomeCompleto}`}
+                />
+        </Autoria>
+        </Conteudo>
     );
 };
 

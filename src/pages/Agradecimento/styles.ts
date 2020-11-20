@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Conteudo = styled.div`
     margin: 5% auto;
@@ -19,5 +20,8 @@ export const Conteudo = styled.div`
     }
     li {
         background-color: pink;
+        &:hover {
+            background-color: ${shade(0.2, '#eecccc')};
+        }
     }
 `;
