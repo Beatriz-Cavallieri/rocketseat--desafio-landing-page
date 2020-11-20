@@ -1,7 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { min } from '../../../styles/styleFunctions';
 
-export const Conteudo = styled.div`
+interface PropsConteudo {
+    estaFocado: boolean;
+}
+
+export const Conteudo = styled.div<PropsConteudo>`
     width: 100%;
 
     border: 1px solid #666;
@@ -17,6 +21,17 @@ export const Conteudo = styled.div`
         margin-right: 8px;
         color: #666;
     }
+
+    ${props =>
+        props.estaFocado &&
+        css`
+            color: var(--amarelo);
+            border-color: var(--amarelo);
+            background-color: #ddd;
+            svg {
+                color: var(--amarelo);
+            }
+        `}
 
     input {
         font-size: 18px;
